@@ -58,7 +58,7 @@ afterEvaluate {
                 pom {
                     groupId = "com.github.Prathiv07"
                     artifactId = "KMMasModule"
-                    version = "3."
+                    version = "3.4"
 
                     withXml {
                         val dependenciesNode = asNode().appendNode("dependencies")
