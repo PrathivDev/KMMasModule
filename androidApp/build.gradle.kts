@@ -53,23 +53,23 @@ afterEvaluate {
     publishing {
         publications {
             register<MavenPublication>("release") {
-                afterEvaluate {
-                    from(components["release"])
-                }
+                from(components["release"])
+
                 pom {
                     groupId = "com.github.Prathiv07"
                     artifactId = "KMMasModule"
-                    version = "3.3"
+                    version = "3."
 
                     withXml {
-                        asNode().appendNode("dependencies").apply {
-                            appendNode("dependency").apply {
-                                appendNode("groupId", "io.coil-kt")
-                                appendNode("artifactId", "coil-compose")
-                                appendNode("version", "2.7.0")
-                                appendNode("scope", "compile")
-                            }
+                        val dependenciesNode = asNode().appendNode("dependencies")
+
+                        dependenciesNode.appendNode("dependency").apply {
+                            appendNode("groupId", "io.coil-kt")
+                            appendNode("artifactId", "coil-compose")
+                            appendNode("version", "2.7.0")
+                            appendNode("scope", "compile")
                         }
+
                     }
                 }
 
