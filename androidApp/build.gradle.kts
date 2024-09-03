@@ -56,22 +56,22 @@ afterEvaluate {
             register<MavenPublication>("release") {
                 groupId = "com.github.Prathiv07"
                 artifactId = "KMMasModule"
-                version = "2.4"
+                version = "2.5"
 
                 afterEvaluate {
                     from(components["release"])
                 }
 
-                pom.withXml {
-                    asNode().appendNode("dependencies").apply {
-                        appendNode("dependency").apply {
-                            appendNode("groupId", "com.github.Prathiv07")
-                            appendNode("artifactId", "shared")
-                            appendNode("version", "2.4")
-                            appendNode("scope", "compile")
-                        }
-                    }
-                }
+//                pom.withXml {
+//                    asNode().appendNode("dependencies").apply {
+//                        appendNode("dependency").apply {
+//                            appendNode("groupId", "com.github.Prathiv07")
+//                            appendNode("artifactId", "shared")
+//                            appendNode("version", "2.4")
+//                            appendNode("scope", "compile")
+//                        }
+//                    }
+//                }
             }
         }
     }
