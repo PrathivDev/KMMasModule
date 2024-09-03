@@ -35,12 +35,12 @@ android {
 }
 
 dependencies {
-//    implementation(projects.shared)
+    implementation(projects.shared)
     implementation(libs.compose.ui)
     implementation(libs.compose.ui.tooling.preview)
     implementation(libs.compose.material3)
     implementation(libs.androidx.activity.compose)
-    implementation(project(":libs"))
+
     debugImplementation(libs.compose.ui.tooling)
 
     // 3rd party
@@ -56,11 +56,22 @@ afterEvaluate {
             register<MavenPublication>("release") {
                 groupId = "com.github.Prathiv07"
                 artifactId = "KMMasModule"
-                version = "1.6"
+                version = "1.8"
+
+                pom.withXml {
+                    asNode().appendNode("dependencies").apply {
+                        appendNode("dependency").apply {
+                            appendNode("groupId", "com.github.Prathiv07")
+                            appendNode("artifactId", "shared")
+                            appendNode("version", "1.8")
+                        }
+                    }
+                }
 
                 afterEvaluate {
                     from(components["release"])
                 }
+
             }
         }
     }
