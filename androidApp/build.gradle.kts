@@ -1,18 +1,17 @@
+import com.android.build.gradle.internal.utils.createPublishingInfoForLibrary
+
 plugins {
-    alias(libs.plugins.androidApplication)
+    alias(libs.plugins.androidLibrary)
     alias(libs.plugins.kotlinAndroid)
     alias(libs.plugins.compose.compiler)
+    `maven-publish`
 }
 
 android {
     namespace = "com.kobil.kmmasmodule.android"
     compileSdk = 34
     defaultConfig {
-        applicationId = "com.kobil.kmmasmodule.android"
         minSdk = 24
-        targetSdk = 34
-        versionCode = 1
-        versionName = "1.0"
     }
     buildFeatures {
         compose = true
@@ -43,4 +42,26 @@ dependencies {
     implementation(libs.compose.material3)
     implementation(libs.androidx.activity.compose)
     debugImplementation(libs.compose.ui.tooling)
+
+    // 3rd party
+
+    implementation(libs.coil.compose)
+}
+
+
+
+afterEvaluate {
+    publishing {
+        publications {
+            register<MavenPublication>("release") {
+                groupId = "com.github.Prathiv07"
+                artifactId = "KMMasModule"
+                version = "1.0"
+
+                afterEvaluate {
+                    from(components["release"])
+                }
+            }
+        }
+    }
 }
