@@ -59,14 +59,14 @@ afterEvaluate {
                 pom {
                     groupId = "com.github.Prathiv07"
                     artifactId = "KMMasModule"
-                    version = "3.2"
+                    version = "3.3"
 
                     withXml {
                         asNode().appendNode("dependencies").apply {
                             appendNode("dependency").apply {
-                                appendNode("groupId", "com.github.Prathiv07")
-                                appendNode("artifactId", "shared")
-                                appendNode("version", "3.2")
+                                appendNode("groupId", "io.coil-kt")
+                                appendNode("artifactId", "coil-compose")
+                                appendNode("version", "2.7.0")
                                 appendNode("scope", "compile")
                             }
                         }
