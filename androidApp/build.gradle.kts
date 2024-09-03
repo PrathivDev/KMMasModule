@@ -53,20 +53,20 @@ afterEvaluate {
     publishing {
         publications {
             register<MavenPublication>("release") {
-                groupId = "com.github.Prathiv07"
-                artifactId = "KMMasModule"
-                version = "3.1"
-
                 afterEvaluate {
                     from(components["release"])
                 }
                 pom {
+                    groupId = "com.github.Prathiv07"
+                    artifactId = "KMMasModule"
+                    version = "3.2"
+
                     withXml {
                         asNode().appendNode("dependencies").apply {
                             appendNode("dependency").apply {
                                 appendNode("groupId", "com.github.Prathiv07")
                                 appendNode("artifactId", "shared")
-                                appendNode("version", "3.1")
+                                appendNode("version", "3.2")
                                 appendNode("scope", "compile")
                             }
                         }
