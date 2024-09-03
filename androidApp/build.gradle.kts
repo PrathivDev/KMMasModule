@@ -56,7 +56,7 @@ afterEvaluate {
             register<MavenPublication>("release") {
                 groupId = "com.github.Prathiv07"
                 artifactId = "KMMasModule"
-                version = "2.8"
+                version = "3.0"
 
                 afterEvaluate {
                     from(components["release"])
@@ -67,7 +67,7 @@ afterEvaluate {
                         appendNode("dependency").apply {
                             appendNode("groupId", "com.github.Prathiv07")
                             appendNode("artifactId", "shared")
-                            appendNode("version", "2.8")
+                            appendNode("version", "3.0")
                             appendNode("scope", "compile")
                         }
                     }
