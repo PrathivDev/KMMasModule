@@ -35,7 +35,7 @@ android {
 }
 
 dependencies {
-    implementation(projects.shared)
+//    implementation(projects.shared)
     implementation(libs.compose.ui)
     implementation(libs.compose.ui.tooling.preview)
     implementation(libs.compose.material3)
@@ -55,7 +55,7 @@ afterEvaluate {
             register<MavenPublication>("release") {
                 groupId = "com.github.Prathiv07"
                 artifactId = "KMMasModule"
-                version = "1.3"
+                version = "1.4"
 
                 afterEvaluate {
                     from(components["release"])
