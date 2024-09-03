@@ -1,4 +1,3 @@
-
 plugins {
     alias(libs.plugins.androidLibrary)
     alias(libs.plugins.kotlinAndroid)
@@ -35,7 +34,7 @@ android {
 }
 
 dependencies {
-    implementation("com.github.Prathiv07:shared:2.8")
+    implementation(projects.shared)
     implementation(libs.compose.ui)
     implementation(libs.compose.ui.tooling.preview)
     implementation(libs.compose.material3)
@@ -56,22 +55,24 @@ afterEvaluate {
             register<MavenPublication>("release") {
                 groupId = "com.github.Prathiv07"
                 artifactId = "KMMasModule"
-                version = "3.0"
+                version = "3.1"
 
                 afterEvaluate {
                     from(components["release"])
                 }
-
-                pom.withXml {
-                    asNode().appendNode("dependencies").apply {
-                        appendNode("dependency").apply {
-                            appendNode("groupId", "com.github.Prathiv07")
-                            appendNode("artifactId", "shared")
-                            appendNode("version", "3.0")
-                            appendNode("scope", "compile")
+                pom {
+                    withXml {
+                        asNode().appendNode("dependencies").apply {
+                            appendNode("dependency").apply {
+                                appendNode("groupId", "com.github.Prathiv07")
+                                appendNode("artifactId", "shared")
+                                appendNode("version", "3.1")
+                                appendNode("scope", "compile")
+                            }
                         }
                     }
                 }
+
             }
         }
     }
