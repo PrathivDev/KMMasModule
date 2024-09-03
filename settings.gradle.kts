@@ -16,4 +16,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "KMMasModule"
 include(":androidApp")
-//include(":shared")
+include(":androidApp:libs")
