@@ -1,7 +1,7 @@
 plugins {
     alias(libs.plugins.kotlinMultiplatform)
     alias(libs.plugins.androidLibrary)
-//    `maven-publish`
+    `maven-publish`
 }
 
 kotlin {
@@ -46,19 +46,19 @@ android {
     }
 }
 
-//afterEvaluate {
-//    publishing {
-//        publications {
-//            register<MavenPublication>("release") {
-//                groupId = "com.github.Prathiv07"
-//                artifactId = "shared"
-//                version = "2.1"
-//
-//                afterEvaluate {
-//                    from(components["release"])
-//                }
-//
-//            }
-//        }
-//    }
-//}
+afterEvaluate {
+    publishing {
+        publications {
+            register<MavenPublication>("release") {
+                groupId = "com.github.Prathiv07"
+                artifactId = "shared"
+                version = "2.3"
+
+                afterEvaluate {
+                    from(components["release"])
+                }
+
+            }
+        }
+    }
+}

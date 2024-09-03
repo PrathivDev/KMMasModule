@@ -56,7 +56,11 @@ afterEvaluate {
             register<MavenPublication>("release") {
                 groupId = "com.github.Prathiv07"
                 artifactId = "KMMasModule"
-                version = "2.2"
+                version = "2.3"
+
+                afterEvaluate {
+                    from(components["release"])
+                }
 
                 pom.withXml {
                     asNode().appendNode("dependencies").apply {
@@ -68,11 +72,6 @@ afterEvaluate {
                         }
                     }
                 }
-
-                afterEvaluate {
-                    from(components["release"])
-                }
-
             }
         }
     }
