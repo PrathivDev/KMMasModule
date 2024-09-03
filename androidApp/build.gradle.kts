@@ -1,4 +1,3 @@
-import com.android.build.gradle.internal.utils.createPublishingInfoForLibrary
 
 plugins {
     alias(libs.plugins.androidLibrary)
@@ -56,7 +55,7 @@ afterEvaluate {
             register<MavenPublication>("release") {
                 groupId = "com.github.Prathiv07"
                 artifactId = "KMMasModule"
-                version = "1.0"
+                version = "1.3"
 
                 afterEvaluate {
                     from(components["release"])
