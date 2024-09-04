@@ -6,7 +6,7 @@ plugins {
 
 kotlin {
     androidTarget {
-        publishLibraryVariants("release", "debug")
+        publishLibraryVariants("release")
         compilations.all {
             kotlinOptions {
                 jvmTarget = "1.8"
@@ -53,7 +53,7 @@ afterEvaluate {
             register<MavenPublication>("release") {
                 groupId = "com.github.Prathiv07"
                 artifactId = "shared"
-                version = "3.9"
+                version = "4.0"
                 from(components["kotlin"])
             }
 

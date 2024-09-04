@@ -56,7 +56,7 @@ afterEvaluate {
             register<MavenPublication>("release") {
                 groupId = "com.github.Prathiv07"
                 artifactId = "KMMasModule"
-                version = "3.9"
+                version = "4.0"
                 from(components["release"])
 
 //                pom {
