@@ -44,3 +44,18 @@ android {
         targetCompatibility = JavaVersion.VERSION_1_8
     }
 }
+
+
+
+//afterEvaluate {
+//    publishing {
+//        publications {
+//            register<MavenPublication>("release") {
+//                groupId = "com.github.Prathiv07"
+//                artifactId = "shared"
+//                version = "1.0"
+//                from(components["release"])
+//            }
+//        }
+//    }
+//}

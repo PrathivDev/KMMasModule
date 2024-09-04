@@ -6,7 +6,7 @@ compose-material3 = "1.1.2"
 androidx-activityCompose = "1.8.0"
 
 coilCompose = "2.7.0"
-
+kmmshared = "1.1"
 [libraries]
 kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
 androidx-activity-compose = { module = "androidx.activity:activity-compose", version.ref = "androidx-activityCompose" }
@@ -17,6 +17,7 @@ compose-foundation = { module = "androidx.compose.foundation:foundation", versio
 compose-material3 = { module = "androidx.compose.material3:material3", version.ref = "compose-material3" }
 
 coil-compose = { module = "io.coil-kt:coil-compose", version.ref = "coilCompose" }
+#kmmshared = { module = "com.github.Prathiv07:KmmLibrary", version.ref = "kmmshared" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }

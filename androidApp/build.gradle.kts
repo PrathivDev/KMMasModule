@@ -35,6 +35,7 @@ android {
 
 dependencies {
     implementation(projects.shared)
+//    implementation(libs.kmmshared)
     implementation(libs.compose.ui)
     implementation(libs.compose.ui.tooling.preview)
     implementation(libs.compose.material3)
@@ -53,25 +54,28 @@ afterEvaluate {
     publishing {
         publications {
             register<MavenPublication>("release") {
+                groupId = "com.github.Prathiv07"
+                artifactId = "KMMasModule"
+                version = "3.6"
                 from(components["release"])
 
-                pom {
-                    groupId = "com.github.Prathiv07"
-                    artifactId = "KMMasModule"
-                    version = "3.4"
-
-                    withXml {
-                        val dependenciesNode = asNode().appendNode("dependencies")
-
-                        dependenciesNode.appendNode("dependency").apply {
-                            appendNode("groupId", "io.coil-kt")
-                            appendNode("artifactId", "coil-compose")
-                            appendNode("version", "2.7.0")
-                            appendNode("scope", "compile")
-                        }
-
-                    }
-                }
+//                pom {
+//                    groupId = "com.github.Prathiv07"
+//                    artifactId = "KMMasModule"
+//                    version = "3.4"
+//
+//                    withXml {
+//                        val dependenciesNode = asNode().appendNode("dependencies")
+//
+//                        dependenciesNode.appendNode("dependency").apply {
+//                            appendNode("groupId", "io.coil-kt")
+//                            appendNode("artifactId", "coil-compose")
+//                            appendNode("version", "2.7.0")
+//                            appendNode("scope", "compile")
+//                        }
+//
+//                    }
+//                }
 
             }
         }
